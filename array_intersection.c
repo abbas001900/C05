@@ -9,16 +9,19 @@ void recup_valeur(int tab[], int n) {
 
 // Remplit le tableau inter[] avec les éléments communs à tab1 et tab2
 // Retourne le nombre d'éléments dans l'intersection
-void intersection(int tab1[], int tab2[], int n1, int n2, int inter[]) {
+int intersection(int tab1[], int tab2[], int n1, int n2, int inter[]) {
     int k = 0;
 
     for (int i = 0; i < n1; i++) {
         for (int j = 0; j < n2; j++) {  // Corrigé ici
             if (tab1[i] == tab2[j]) {
-                printf("%d ", tab1[i]);
+                inter[k++] = tab1[i];
+                break;  // Évite les doublons si tab2 contient plusieurs fois la même valeur
             }
         }
     }
+
+    return k;  // Retourne le nombre d’éléments dans l’intersection
 }
 
 int main(void) {
@@ -32,8 +35,13 @@ int main(void) {
     recup_valeur(tab2, n2);
 
     int inter[n1 < n2 ? n1 : n2];  // Taille maximale possible de l'intersection
-    intersection(tab1, tab2, n1, n2, inter);
+    int taille_inter = intersection(tab1, tab2, n1, n2, inter);
 
+    // Affichage du résultat
+    printf("Intersection : ");
+    for (int i = 0; i < taille_inter; i++) {
+        printf("%d ", inter[i]);
+    }
     printf("\n");
 
     return 0;

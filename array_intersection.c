@@ -9,21 +9,22 @@ void recup_valeur(int tab[], int n) {
 
 int main(void) {
     int n1, n2;
+
+
     scanf("%d", &n1);
     int tab1[n1];
     recup_valeur(tab1, n1);
+
 
     scanf("%d", &n2);
     int tab2[n2];
     recup_valeur(tab2, n2);
 
 
-    int inter[n1 < n2 ? n1 : n2];  // Taille maximale possible de l'intersection
-
     // Affichage du résultat
     printf("Intersection : ");
     for (int i = 0; i < n1; i++) {
-        for (int j = 0; j < n2; j++) {  // Corrigé ici
+        for (int j = 0; j < n2; j++) { 
             if (tab1[i] == tab2[j]) {
                 printf("%d ", tab1[i]);
             }
@@ -32,5 +33,6 @@ int main(void) {
 
     printf("\n");
 
+    
     return 0;
 }

@@ -13,7 +13,7 @@ int main(void) {
 
     int temp = tab[0];
 
-    for (int i = 0; i < n - 2; i++) {
+    for (int i = 0; i < n - 1; i++) {
         tab[i] = tab[i+1];
     }
     

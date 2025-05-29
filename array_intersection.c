@@ -1,24 +1,26 @@
 #include <stdio.h>
 
-// Remplit un tableau avec des valeurs saisies
-void recup_valeur(int tab[], int n) {
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &tab[i]);
-    }
-}
 
 int main(void) {
     int n1, n2;
 
 
     scanf("%d", &n1);
+
     int tab1[n1];
-    recup_valeur(tab1, n1);
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &tab1[i]);
+    }
 
 
     scanf("%d", &n2);
+
     int tab2[n2];
-    recup_valeur(tab2, n2);
+    
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &tab2[i]);
+    }
 
 
     // Affichage du résultat
@@ -33,6 +35,6 @@ int main(void) {
 
     printf("\n");
 
-    
+
     return 0;
 }

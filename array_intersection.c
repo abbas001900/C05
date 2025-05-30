@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 
-int main() {
-    
+int main()
+{  
     int n;
 
     // Recuperation du nombre d'elements du premier tableau
@@ -12,11 +12,11 @@ int main() {
     int tab1[n];
 
     // Recuperation des valeurs du premier tableau
-    for (int i = 0; i < nbre1; i++) {
+    for (int i = 0; i < nbre1; i++)
+    {
         scanf("%d", &tab1[i]);
     }
 
-    // Declaration du nombre d'elements du second tableau
     int m;
 
     // Recuperation du nombre d'elemnts du second tableau
@@ -26,21 +26,23 @@ int main() {
     int tab2[m];
     
     // Recuperation des valeurs du second tableau
-    for (int i = 0; i < m; i++) {
+    for (int i = 0; i < m; i++)
+    {
         scanf("%d", &tab2[i]);
     }
 
     // Affichage du résultat
     printf("Intersection : ");
 
-    // Comparaison pour recuperation des valeurs communes entre les deux tableaux
-    for (int i = 0; i < n; i++) {
-
-        for (int j = 0; j < m; j++) {
-
-            if (tab1[i] == tab2[j]) {
-
-                printf("%d ", tab1[i]);
+    // Parcours chaque element du tableau
+    for (int i = 0; i < n; i++)
+    {
+        // Comparaison pour recuperation des valeurs communes entre les deux tableaux
+        for (int j = 0; j < m; j++)
+        {
+            if (tab1[i] == tab2[j]) // Si une valeur est presente dans les deux tableaux
+            {
+                printf("%d ", tab1[i]); // L'afficher
             }
         }
     }
@@ -48,6 +50,5 @@ int main() {
     // Fin de la ligne
     printf("\n");
 
-
-    return 0;
+   return 0;
 }

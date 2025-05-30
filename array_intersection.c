@@ -20,18 +20,21 @@ int main() {
 
     int tab2[nbre2];
     
-    for (int i = 0; i < nbre2; i++)
+    for (int i = 0; i < nbre2; i++) {
         scanf("%d", &tab2[i]);
-
+    }
 
     // Affichage du résultat
     printf("Intersection : ");
 
-    for (int i = 0; i < nbre1; i++)
-        for (int j = 0; j < nbre2; j++) 
-            if (tab1[i] == tab2[j])
+    for (int i = 0; i < nbre1; i++) {
+        for (int j = 0; j < nbre2; j++) {
+            if (tab1[i] == tab2[j]) {
                 printf("%d ", tab1[i]);
-
+            }
+        }
+    }
+    
     printf("\n");
 
 

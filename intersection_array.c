@@ -1,54 +1,44 @@
 #include <stdio.h>
 
-
-int main()
-{  
-    int n;
-
-    // Recuperation du nombre d'elements du premier tableau
+int main() {
+    int n, m;
     scanf("%d", &n);
-
-    // Declaration du premier tableau
     int tab1[n];
-
-    // Recuperation des valeurs du premier tableau
-    for (int i = 0; i < nbre1; i++)
-    {
+    for (int i = 0; i < n; i++) {
         scanf("%d", &tab1[i]);
     }
 
-    int m;
-
-    // Recuperation du nombre d'elemnts du second tableau
     scanf("%d", &m);
-
-    // Declaration du second tableau
     int tab2[m];
-    
-    // Recuperation des valeurs du second tableau
-    for (int i = 0; i < m; i++)
-    {
+    for (int i = 0; i < m; i++) {
         scanf("%d", &tab2[i]);
     }
 
-    // Affichage du résultat
     printf("Intersection : ");
-
-    // Parcours chaque element du tableau
-    for (int i = 0; i < n; i++)
-    {
-        // Comparaison pour recuperation des valeurs communes entre les deux tableaux
-        for (int j = 0; j < m; j++)
-        {
-            if (tab1[i] == tab2[j]) // Si une valeur est presente dans les deux tableaux
-            {
-                printf("%d ", tab1[i]); // L'afficher
+    for (int i = 0; i < n; i++) {
+        // Vérifie si tab1[i] est dans tab2
+        int found = 0;
+        for (int j = 0; j < m; j++) {
+            if (tab1[i] == tab2[j]) {
+                found = 1;
+                break;
             }
+        }
+
+        // Vérifie si déjà affiché (dans tab1 avant i)
+        int deja_affiche = 0;
+        for (int k = 0; k < i; k++) {
+            if (tab1[i] == tab1[k]) {
+                deja_affiche = 1;
+                break;
+            }
+        }
+
+        if (found && !deja_affiche) {
+            printf("%d ", tab1[i]);
         }
     }
 
-    // Fin de la ligne
     printf("\n");
-
-   return 0;
+    return 0;
 }
